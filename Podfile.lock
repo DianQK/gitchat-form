@@ -1,0 +1,42 @@
+PODS:
+  - MarqueeLabel/Swift (3.0.5)
+  - NotificationBannerSwift (1.2.0):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 3.2.0)
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+  - RbSwift (0.4.0)
+  - RxCocoa (3.4.0):
+    - RxSwift (~> 3.4)
+  - RxDataSources (1.0.3):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxSwift (3.4.0)
+  - SnapKit (3.2.0)
+  - SwiftyAttributes (3.1.0)
+
+DEPENDENCIES:
+  - NotificationBannerSwift
+  - R.swift
+  - RbSwift
+  - RxCocoa (~> 3.4)
+  - RxDataSources (~> 1.0)
+  - RxSwift (~> 3.4)
+  - SwiftyAttributes
+
+SPEC CHECKSUMS:
+  MarqueeLabel: 8a25b2cf02cf52165022f01369e63536c58fcc00
+  NotificationBannerSwift: 77f96e1c418309600aad70b21247d9b3cbc360e3
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  RbSwift: 3581b748954330aed97863c0aa04ab17fa0d4b6d
+  RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
+  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
+
+PODFILE CHECKSUM: be90ebe83bcfa1ebd9fecc820f479bae183cb32c
+
+COCOAPODS: 1.2.1

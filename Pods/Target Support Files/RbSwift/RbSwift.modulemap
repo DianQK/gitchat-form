@@ -1,0 +1,6 @@
+framework module RbSwift {
+  umbrella header "RbSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
