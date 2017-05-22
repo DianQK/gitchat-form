@@ -31,8 +31,149 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 20 images.
   struct image {
+    /// Image `Beth`.
+    static let beth = Rswift.ImageResource(bundle: R.hostingBundle, name: "Beth")
+    /// Image `Brent`.
+    static let brent = Rswift.ImageResource(bundle: R.hostingBundle, name: "Brent")
+    /// Image `Carter`.
+    static let carter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Carter")
+    /// Image `Chris`.
+    static let chris = Rswift.ImageResource(bundle: R.hostingBundle, name: "Chris")
+    /// Image `Dale`.
+    static let dale = Rswift.ImageResource(bundle: R.hostingBundle, name: "Dale")
+    /// Image `Darrell`.
+    static let darrell = Rswift.ImageResource(bundle: R.hostingBundle, name: "Darrell")
+    /// Image `Dave`.
+    static let dave = Rswift.ImageResource(bundle: R.hostingBundle, name: "Dave")
+    /// Image `Glen`.
+    static let glen = Rswift.ImageResource(bundle: R.hostingBundle, name: "Glen")
+    /// Image `Jean`.
+    static let jean = Rswift.ImageResource(bundle: R.hostingBundle, name: "Jean")
+    /// Image `Joy`.
+    static let joy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Joy")
+    /// Image `June`.
+    static let june = Rswift.ImageResource(bundle: R.hostingBundle, name: "June")
+    /// Image `Kent`.
+    static let kent = Rswift.ImageResource(bundle: R.hostingBundle, name: "Kent")
+    /// Image `Kyle`.
+    static let kyle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Kyle")
+    /// Image `Lester`.
+    static let lester = Rswift.ImageResource(bundle: R.hostingBundle, name: "Lester")
+    /// Image `Linda`.
+    static let linda = Rswift.ImageResource(bundle: R.hostingBundle, name: "Linda")
+    /// Image `Melvin`.
+    static let melvin = Rswift.ImageResource(bundle: R.hostingBundle, name: "Melvin")
+    /// Image `Oscar`.
+    static let oscar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Oscar")
+    /// Image `Peggy`.
+    static let peggy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Peggy")
+    /// Image `Ruby`.
+    static let ruby = Rswift.ImageResource(bundle: R.hostingBundle, name: "Ruby")
+    /// Image `Zoe`.
+    static let zoe = Rswift.ImageResource(bundle: R.hostingBundle, name: "Zoe")
+    
+    /// `UIImage(named: "Beth", bundle: ..., traitCollection: ...)`
+    static func beth(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.beth, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Brent", bundle: ..., traitCollection: ...)`
+    static func brent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.brent, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Carter", bundle: ..., traitCollection: ...)`
+    static func carter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.carter, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Chris", bundle: ..., traitCollection: ...)`
+    static func chris(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.chris, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Dale", bundle: ..., traitCollection: ...)`
+    static func dale(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dale, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Darrell", bundle: ..., traitCollection: ...)`
+    static func darrell(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.darrell, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Dave", bundle: ..., traitCollection: ...)`
+    static func dave(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dave, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Glen", bundle: ..., traitCollection: ...)`
+    static func glen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.glen, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Jean", bundle: ..., traitCollection: ...)`
+    static func jean(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.jean, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Joy", bundle: ..., traitCollection: ...)`
+    static func joy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.joy, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "June", bundle: ..., traitCollection: ...)`
+    static func june(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.june, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Kent", bundle: ..., traitCollection: ...)`
+    static func kent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kent, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Kyle", bundle: ..., traitCollection: ...)`
+    static func kyle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kyle, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Lester", bundle: ..., traitCollection: ...)`
+    static func lester(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lester, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Linda", bundle: ..., traitCollection: ...)`
+    static func linda(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.linda, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Melvin", bundle: ..., traitCollection: ...)`
+    static func melvin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.melvin, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Oscar", bundle: ..., traitCollection: ...)`
+    static func oscar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.oscar, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Peggy", bundle: ..., traitCollection: ...)`
+    static func peggy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.peggy, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Ruby", bundle: ..., traitCollection: ...)`
+    static func ruby(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ruby, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "Zoe", bundle: ..., traitCollection: ...)`
+    static func zoe(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.zoe, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -190,11 +331,16 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Main"
       let scheduleAddParticipantsViewController = StoryboardViewControllerResource<ScheduleAddParticipantsViewController>(identifier: "ScheduleAddParticipantsViewController")
+      let scheduleDeleteParticipantsViewController = StoryboardViewControllerResource<ScheduleDeleteParticipantsViewController>(identifier: "ScheduleDeleteParticipantsViewController")
       let scheduleNoteViewController = StoryboardViewControllerResource<ScheduleNoteViewController>(identifier: "ScheduleNoteViewController")
       let scheduleRemindViewController = StoryboardViewControllerResource<ScheduleRemindViewController>(identifier: "ScheduleRemindViewController")
       
       func scheduleAddParticipantsViewController(_: Void = ()) -> ScheduleAddParticipantsViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: scheduleAddParticipantsViewController)
+      }
+      
+      func scheduleDeleteParticipantsViewController(_: Void = ()) -> ScheduleDeleteParticipantsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: scheduleDeleteParticipantsViewController)
       }
       
       func scheduleNoteViewController(_: Void = ()) -> ScheduleNoteViewController? {
@@ -206,9 +352,11 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "avatar") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'avatar' is used in storyboard 'Main', but couldn't be loaded.") }
+        if _R.storyboard.main().scheduleDeleteParticipantsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scheduleDeleteParticipantsViewController' could not be loaded from storyboard 'Main' as 'ScheduleDeleteParticipantsViewController'.") }
+        if _R.storyboard.main().scheduleNoteViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scheduleNoteViewController' could not be loaded from storyboard 'Main' as 'ScheduleNoteViewController'.") }
         if _R.storyboard.main().scheduleAddParticipantsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scheduleAddParticipantsViewController' could not be loaded from storyboard 'Main' as 'ScheduleAddParticipantsViewController'.") }
         if _R.storyboard.main().scheduleRemindViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scheduleRemindViewController' could not be loaded from storyboard 'Main' as 'ScheduleRemindViewController'.") }
-        if _R.storyboard.main().scheduleNoteViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scheduleNoteViewController' could not be loaded from storyboard 'Main' as 'ScheduleNoteViewController'.") }
       }
       
       fileprivate init() {}

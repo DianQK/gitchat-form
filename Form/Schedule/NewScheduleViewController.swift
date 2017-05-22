@@ -13,6 +13,7 @@ import RxDataSources
 import SwiftyAttributes
 import RbSwift
 import NotificationBannerSwift
+import Rswift
 
 enum Remind: Equatable {
     case start
@@ -55,18 +56,34 @@ enum Remind: Equatable {
     }
 }
 
+func xxx() {
+
+    
+ 
+    
+    
+}
+
+
+
+
 struct Member: Equatable {
     let id: Int64
     let name: String
     let avatar: UIImage
 
-    static var me: Member {
-        return Member(id: 1, name: "Me", avatar: UIImage())
-    }
+    static let me: Member = Member(id: 1, name: R.image.joy.name, avatar: R.image.joy()!)
 
     static func ==(lhs: Member, rhs: Member) -> Bool {
         return lhs.id == rhs.id && lhs.name == rhs.name && lhs.avatar == rhs.avatar
     }
+    
+    static let members: [Member] = ([R.image.dale, R.image.zoe, R.image.june, R.image.jean, R.image.melvin,
+                                               R.image.oscar, R.image.glen, R.image.chris, R.image.carter, R.image.darrell,
+                                               R.image.beth, R.image.linda, R.image.peggy, R.image.kyle, R.image.kent] as [Rswift.ImageResource])
+        .map({ $0.name }).enumerated().map({ index, name in
+            return Member(id: Int64(index) + 1, name: name, avatar: UIImage(named: name)!)
+    })
 }
 
 class ScheduleForm {
@@ -131,6 +148,7 @@ enum NewScheduleItem: Equatable, IdentifiableType {
     case remind(Variable<Remind?>)
     case bell(isBellEnabled: Variable<Bool>)
     case note(String)
+    case deleteParticipants(selectedMembers: [Member])
 
     var identity: String {
         switch self {
@@ -152,6 +170,8 @@ enum NewScheduleItem: Equatable, IdentifiableType {
             return "bell"
         case .note:
             return "note"
+        case .deleteParticipants:
+            return "deleteParticipants"
         }
     }
 
@@ -173,6 +193,8 @@ enum NewScheduleItem: Equatable, IdentifiableType {
             return true
         case (let .note(lNote), let .note(rNote)):
             return lNote == rNote
+        case (.deleteParticipants, .deleteParticipants):
+            return true
         default:
             return false
         }
@@ -224,7 +246,7 @@ class NewScheduleViewController: UIViewController {
         let selectingTime = Variable<Variable<Date>?>(nil)
         let isNeedRemind = Variable(false)
 
-        dataSource.configureCell = { dataSource, tableView, indexPath, element in
+        dataSource.configureCell = { [unowned self] dataSource, tableView, indexPath, element in
             switch element {
             case let .name(name):
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.scheduleTextInputTableViewCell, for: indexPath)!
@@ -317,6 +339,16 @@ class NewScheduleViewController: UIViewController {
                 return cell
             case let .participants(members):
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.scheduleParticipantTableViewCell, for: indexPath)!
+                cell.selectedMembers.value = members
+                cell.addMember.asObservable()
+                    .flatMap {
+                        ScheduleAddParticipantsViewController.rx.createScheduleAddParticipants(selectedMembers: members, parent: self)
+                            .flatMap { $0.rx.ensureAddMembers }
+                            .take(1)
+                    }
+                    .map { members + $0 }
+                    .bind(to: scheduleForm.participants)
+                    .disposed(by: cell.reuseDisposeBag)
                 return cell
             case .addRemind:
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.scheduleTextTableViewCell, for: indexPath)!
@@ -336,6 +368,10 @@ class NewScheduleViewController: UIViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.scheduleNoteTableViewCell, for: indexPath)!
                 cell.noteTextLabel.attributedText = note.isEmpty ? "添加备注".withTextColor(.lightGray) : note.withTextColor(.black)
                 return cell
+            case .deleteParticipants:
+                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.scheduleTextTableViewCell, for: indexPath)!
+                cell.titleLabel.text = "删除成员"
+                return cell
             }
         }
 
@@ -353,9 +389,13 @@ class NewScheduleViewController: UIViewController {
 
                 baseSection.items.append(NewScheduleItem.location(scheduleForm.location))
 
-            let participantsSection = NewScheduleSection(model: "participantsSection", items: [
+            var participantsSection = NewScheduleSection(model: "participantsSection", items: [
                 NewScheduleItem.participants(participants)
                 ])
+                
+                if participants.count > 1 {
+                    participantsSection.items.append(NewScheduleItem.deleteParticipants(selectedMembers: Array(participants.dropFirst())))
+                }
 
             var remindSection = NewScheduleSection(model: "remindSection", items: [])
             if isNeedRemind {
@@ -427,7 +467,22 @@ class NewScheduleViewController: UIViewController {
             }
             .bind(to: scheduleForm.note)
             .disposed(by: disposeBag)
-
+        
+        tableView.rx.modelSelected(NewScheduleItem.self)
+            .flatMap { [unowned self] (newScheduleItem) -> Observable<[Member]> in
+                switch newScheduleItem {
+                case let .deleteParticipants(selectedMembers):
+                    return ScheduleDeleteParticipantsViewController.rx.createScheduleDeleteParticipants(selectedMembers: selectedMembers, parent: self)
+                        .flatMap { $0.rx.ensure }
+                        .take(1)
+                default:
+                    return Observable.empty()
+                }
+            }
+            .debug()
+            .map { [Member.me] + $0 }
+            .bind(to: scheduleForm.participants)
+            .disposed(by: disposeBag)
 
     }
 
@@ -458,7 +513,7 @@ extension NewScheduleViewController: UITableViewDelegate {
             return ScheduleTimeTableViewCell.height
         case .selectTime:
             return ScheduleTimePickerTableViewCell.height
-        case .location:
+        case .location, .deleteParticipants:
             return ScheduleTextTableViewCell.height
         case let .participants(members):
             return ScheduleParticipantTableViewCell.height(memberCount: members.count)
@@ -469,7 +524,7 @@ extension NewScheduleViewController: UITableViewDelegate {
         case .bell:
             return ScheduleBellTableViewCell.height
         case let .note(note):
-            return ScheduleNoteTableViewCell.height(note: note)
+            return ScheduleNoteTableViewCell.height(tableViewWidth: tableView.bounds.width, note: note)
         }
     }
 

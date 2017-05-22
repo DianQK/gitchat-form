@@ -32,6 +32,7 @@
 		561111411EBD5A3E0015F4AA /* CreateTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561111401EBD5A3E0015F4AA /* CreateTimelineViewController.swift */; };
 		561111431EBD641F0015F4AA /* SelectImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561111421EBD641F0015F4AA /* SelectImagesViewController.swift */; };
 		561111451EBD69C20015F4AA /* ImageCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561111441EBD69C20015F4AA /* ImageCollectionListViewController.swift */; };
+		56E8A8DB1ED0627B00A48777 /* ScheduleDeleteParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E8A8DA1ED0627B00A48777 /* ScheduleDeleteParticipantsViewController.swift */; };
 		90067971462E5258AF28993B /* Pods_Form.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98CEC166D2FEB30B736BC844 /* Pods_Form.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		561111401EBD5A3E0015F4AA /* CreateTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTimelineViewController.swift; sourceTree = "<group>"; };
 		561111421EBD641F0015F4AA /* SelectImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectImagesViewController.swift; sourceTree = "<group>"; };
 		561111441EBD69C20015F4AA /* ImageCollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionListViewController.swift; sourceTree = "<group>"; };
+		56E8A8DA1ED0627B00A48777 /* ScheduleDeleteParticipantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDeleteParticipantsViewController.swift; sourceTree = "<group>"; };
 		98CEC166D2FEB30B736BC844 /* Pods_Form.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Form.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				26772E241EC91967009ADDA9 /* ScheduleRemindViewController.swift */,
 				26772E261EC925C4009ADDA9 /* ScheduleNoteViewController.swift */,
 				26772E281EC9338D009ADDA9 /* ScheduleAddParticipantsViewController.swift */,
+				56E8A8DA1ED0627B00A48777 /* ScheduleDeleteParticipantsViewController.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				26772E161EC8B5A5009ADDA9 /* ScheduleTextTableViewCell.swift in Sources */,
 				560CC17F1EBF75F100BC0A34 /* SelectImageDetailViewController.swift in Sources */,
 				561111451EBD69C20015F4AA /* ImageCollectionListViewController.swift in Sources */,
+				56E8A8DB1ED0627B00A48777 /* ScheduleDeleteParticipantsViewController.swift in Sources */,
 				561111301EBD596D0015F4AA /* ViewController.swift in Sources */,
 				26772E231EC8D519009ADDA9 /* Operators.swift in Sources */,
 				26772E211EC8BD5F009ADDA9 /* NewScheduleViewController.swift in Sources */,

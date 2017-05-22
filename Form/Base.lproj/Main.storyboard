@@ -249,7 +249,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5sC-dj-Hhs">
                                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vPZ-pW-GSy">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vPZ-pW-GSy">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="vPZ-pW-GSy" secondAttribute="height" id="6mI-Wi-Mcs"/>
@@ -544,7 +544,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticipantsCell" textLabel="7wT-ye-vXx" style="IBUITableViewCellStyleDefault" id="Wh7-E1-WF0" customClass="ReactiveTableViewCell" customModule="Form" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticipantsCell" textLabel="7wT-ye-vXx" imageView="wGY-Ed-KZA" style="IBUITableViewCellStyleDefault" id="Wh7-E1-WF0" customClass="ReactiveTableViewCell" customModule="Form" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wh7-E1-WF0" id="U6D-q7-Qxr">
@@ -552,12 +552,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7wT-ye-vXx">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="74" y="0.0" width="286" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="avatar" id="wGY-Ed-KZA">
+                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -586,6 +590,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QD-ji-HWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4783" y="507"/>
+        </scene>
+        <!--删除成员-->
+        <scene sceneID="0nJ-ig-EgC">
+            <objects>
+                <viewController storyboardIdentifier="ScheduleDeleteParticipantsViewController" automaticallyAdjustsScrollViewInsets="NO" id="6r4-jx-D30" customClass="ScheduleDeleteParticipantsViewController" customModule="Form" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1ls-Ij-yri"/>
+                        <viewControllerLayoutGuide type="bottom" id="pY1-Po-phn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bks-AJ-eUo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7IM-ip-N6B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticipantsCell" textLabel="MvS-ng-wwo" imageView="XLA-O8-utv" style="IBUITableViewCellStyleDefault" id="vQX-fo-Pv6" customClass="ReactiveTableViewCell" customModule="Form" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vQX-fo-Pv6" id="AAi-ft-ocx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MvS-ng-wwo">
+                                                    <rect key="frame" x="74" y="0.0" width="286" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="avatar" id="XLA-O8-utv">
+                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7IM-ip-N6B" secondAttribute="trailing" id="TcQ-Jg-Sdd"/>
+                            <constraint firstItem="pY1-Po-phn" firstAttribute="top" secondItem="7IM-ip-N6B" secondAttribute="bottom" id="gYE-bu-9qW"/>
+                            <constraint firstItem="7IM-ip-N6B" firstAttribute="top" secondItem="1ls-Ij-yri" secondAttribute="bottom" id="knp-K8-IUl"/>
+                            <constraint firstItem="7IM-ip-N6B" firstAttribute="leading" secondItem="Bks-AJ-eUo" secondAttribute="leading" id="xKk-8Z-5bu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="删除成员" id="tB8-KD-ReL">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="RW8-tU-OXX"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="doneBarButtonItem" destination="RW8-tU-OXX" id="W4Q-hp-CWN"/>
+                        <outlet property="tableView" destination="7IM-ip-N6B" id="GKp-Te-sWR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ocy-UK-Bl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5676" y="507"/>
         </scene>
         <!--照片-->
         <scene sceneID="qFM-5i-fz3">
@@ -814,4 +879,7 @@
             <point key="canvasLocation" x="1158" y="552"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar" width="220" height="220"/>
+    </resources>
 </document>
